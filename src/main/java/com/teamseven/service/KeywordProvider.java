@@ -7,10 +7,7 @@ import com.teamseven.service.keywordprocessor.KeywordProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class KeywordProvider {
@@ -25,7 +22,13 @@ public class KeywordProvider {
     }
 
     private Set<KeywordsEnum> extractKeywords(String queryString){
-        return new HashSet<>();
+        Set<KeywordsEnum> keywordsEnums = new HashSet<>();
+
+        HashMap<KeywordsEnum, String> keys;
+
+        for (KeywordsEnum KE)
+
+        return keywordsEnums;
     }
 
 
