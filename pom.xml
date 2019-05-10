@@ -18,6 +18,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<archiva.url>http://178.79.143.118:8081/repository/internal/</archiva.url>
+
+        <jackson.version>2.9.0</jackson.version>
+        <jaxb-api.version>2.2.11</jaxb-api.version>
+        <jackson.version>2.9.0</jackson.version>
+        <org.json.version>20141113</org.json.version>
+        <batik.version>1.8</batik.version>
+        <spring.version>4.3.12.RELEASE</spring.version>
+        <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
+        <hibernate.version>5.0.12.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -33,6 +42,22 @@
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
 			<version>1.5.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-io</artifactId>
+					<groupId>commons-io</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,6 +87,8 @@
 			<url>http://178.79.143.118:8081/repository/internal/</url>
 		</repository>
 	</distributionManagement>
+
+
 
 
 </project>
