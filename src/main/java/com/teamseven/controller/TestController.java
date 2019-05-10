@@ -11,7 +11,7 @@ public class TestController {
 
     @RequestMapping("/user")
     public String test(){
-        return "User is here";
+        return "User xis here";
     }
 
     @RequestMapping(path = "/inquire", produces = MediaType.APPLICATION_JSON_VALUE)
