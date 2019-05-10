@@ -1,11 +1,15 @@
 package com.teamseven.apimodel;
 
 import com.teamseven.enums.KeywordsEnum;
+import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 public class AzuolasRequest {
 
+    @NotEmpty(message = "Azuolas needs to know what's on your mind")
+    @NotNull(message = "Azuolas needs to know what's on your mind")
     private String searchString;
 
     private String userEmail;
