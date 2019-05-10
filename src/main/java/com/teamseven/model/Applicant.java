@@ -20,7 +20,7 @@ public class Applicant {
     private String lastName;
 
     @NotNull(message = "Email is required")
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false, length = 255, unique = true)
     private String email;
 
     @Column(length = 255)

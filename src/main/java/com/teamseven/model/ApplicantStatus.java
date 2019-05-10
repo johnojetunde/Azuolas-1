@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.teamseven.model;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -12,36 +13,43 @@ import javax.validation.constraints.NotNull;
  * @author Ayeni Olusegun
  */
 @Entity
-@Table(name = "applicantStatus")
+@Table(name = "applicant_status")
 public class ApplicantStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    private Long applicantId;
-    
-     private Long statusId;
-     
-     public Long getId() {
+
+    @NotNull
+    @ManyToOne()
+    @JoinColumn(name = "applicant_id", referencedColumnName = "id", nullable = false)
+    private Applicant applicant;
+
+    @NotNull
+    @ManyToOne()
+    @JoinColumn(name = "status_id", referencedColumnName = "id", nullable = false)
+    private Status status;
+
+    public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getApplicantId() {
-        return applicantId;
+
+    public Applicant getApplicant() {
+        return applicant;
     }
 
-    public void setApplicantId(Long id) {
-        this.applicantId = id;
-    }
-    public Long getStatusId() {
-        return statusId;
+    public void setApplicant(Applicant applicant) {
+        this.applicant = applicant;
     }
 
-    public void setStatusId(Long id) {
-        this.statusId = id;
+    public Status getStatus() {
+        return status;
     }
-    
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }
