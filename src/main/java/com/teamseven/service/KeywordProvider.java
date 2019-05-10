@@ -24,7 +24,19 @@ public class KeywordProvider {
     private Set<KeywordsEnum> extractKeywords(String queryString){
         Set<KeywordsEnum> keywordsEnums = new HashSet<>();
 
-        HashMap<KeywordsEnum, String> keys;
+        HashMap<KeywordsEnum, Set<String>> enumKeys = new HashMap<>(); // Keyword Enums from db
+
+        String words[] = queryString.split(" ");
+
+        for (KeywordsEnum keyword : enumKeys.keySet()){
+            Set<String> wordsList = new HashSet<>(Arrays.asList(words));
+            Set<String> keywords = enumKeys.get(keyword);
+            wordsList.retainAll(keywords);
+            if (wordsList.size() > 1){
+                keywordsEnums.add(keyword);
+                break;
+            }
+        }
 
         return keywordsEnums;
     }
