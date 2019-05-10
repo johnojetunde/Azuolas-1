@@ -10,6 +10,8 @@ public enum KeywordsEnum {
     ASSIGN,
     OFFICE,
     FAQ,
+    COMPANY,
+    APPLICANT,
     DEFAULT;
 
     public static Set<String> fromValue(String text) {

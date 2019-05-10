@@ -11,27 +11,32 @@ import java.util.Map;
 public class AzuolasResponse implements Serializable {
 
     @JsonProperty
-    private List<String> message;
+    private String message;
 
     @JsonProperty
     private boolean hasFile;
 
     @JsonProperty
-    private Map<String,String> fileData;
+    private String fileData;
+
+    @JsonProperty
+    private String fileName;
 
     public boolean isHasFile() { return hasFile; }
 
     public void setHasFile(boolean hasFile) { this.hasFile = hasFile; }
 
-    public void setMessage(List<String> message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 
-    public Map<String, String> getFileData() {
-        return fileData;
-    }
+    public String getMessage() { return message; }
 
-    public void setFileData(Map<String, String> fileData) {
-        this.fileData = fileData;
-    }
+    public String getFileData() { return fileData; }
+
+    public void setFileData(String fileData) { this.fileData = fileData; }
+
+    public String getFileName() { return fileName; }
+
+    public void setFileName(String fileName) { this.fileName = fileName; }
 }

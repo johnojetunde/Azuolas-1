@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.teamseven.model;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 /**
  *
  * @author Chris Uzor
@@ -13,13 +13,13 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "status")
 public class Status {
-   @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-   
-   private String statusName;
-   
-   public Long getId() {
+
+    private String statusName;
+
+    public Long getId() {
         return id;
     }
 
@@ -29,7 +29,7 @@ public class Status {
     public String getStatusName() {
         return statusName;
     }
-     public void setCompanyName(String statusName) {
+    public void setCompanyName(String statusName) {
         this.statusName = statusName;
     }
 }

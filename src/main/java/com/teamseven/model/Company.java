@@ -17,27 +17,27 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @NotNull(message =  "Company Name is required")
     @Column(nullable = false, length = 255)
     private String companyName;
-    
+
     @NotNull(message = "Email is required")
     @Column(nullable = false, length = 255)
     private String email;
-    
+
     @NotNull(message = "Type is required")
     @Column(nullable = false, length = 255)
     private String companyType;
-    
+
     @NotNull(message = "Stack is required")
     @Column(nullable = false, length = 255)
     private String companyStack;
-    
+
     private String companyKey;
-    
+
     private String companyLocation;
-    
+
     public Long getId() {
         return id;
     }
@@ -48,28 +48,28 @@ public class Company {
     public String getCompanyName() {
         return companyName;
     }
-     public void setCompanyName(String companyName) {
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
-     
-     public String getCompanyType(){
-          return companyType;
-     }
-     public void setCompanyType(String companyName) {
+
+    public String getCompanyType(){
+        return companyType;
+    }
+    public void setCompanyType(String companyName) {
         this.companyName = companyName;
     }
-     public String getCompanyStack(){
-          return companyType;
-     }
-     public void setCompanyStack(String companyStack) {
+    public String getCompanyStack(){
+        return companyType;
+    }
+    public void setCompanyStack(String companyStack) {
         this.companyStack = companyStack;
     }
-     
-     public String getCompanylocation(){
-          return companyLocation;
-     }
-     public void setcompanyLocation(String companyStack) {
+
+    public String getCompanylocation(){
+        return companyLocation;
+    }
+    public void setcompanyLocation(String companyStack) {
         this.companyStack = companyStack;
     }
-     
+
 }

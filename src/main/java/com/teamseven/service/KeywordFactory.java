@@ -2,9 +2,7 @@ package com.teamseven.service;
 
 import com.teamseven.enums.KeywordsEnum;
 import com.teamseven.service.keywordprocessor.KeywordProcessor;
-import com.teamseven.service.keywordprocessor.impl.DefaultKeywordImpl;
-import com.teamseven.service.keywordprocessor.impl.FAQKeywordImpl;
-import com.teamseven.service.keywordprocessor.impl.ReportKeywordImpl;
+import com.teamseven.service.keywordprocessor.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +14,11 @@ public class KeywordFactory {
     @Autowired
     private FAQKeywordImpl faqKeyword;
     @Autowired
+    private CompanyKeywordImpl companyKeyword;
+    @Autowired
     private DefaultKeywordImpl defaultKeyword;
+    @Autowired
+    private ApplicantKeywordImpl applicantKeyword;
 
 
 
@@ -24,6 +26,8 @@ public class KeywordFactory {
         switch(keywordsEnum){
             case REPORT: return reportKeyword;
             case FAQ: return faqKeyword;
+            case COMPANY: return companyKeyword;
+            case APPLICANT: return applicantKeyword;
             default: return defaultKeyword;
         }
     }

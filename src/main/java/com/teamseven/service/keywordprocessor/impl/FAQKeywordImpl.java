@@ -1,6 +1,7 @@
 package com.teamseven.service.keywordprocessor.impl;
 
 
+import com.google.common.base.Strings;
 import com.teamseven.apimodel.AzuolasRequest;
 import com.teamseven.apimodel.AzuolasResponse;
 import com.teamseven.exceptions.AzuolasServiceException;
@@ -64,7 +65,7 @@ public class FAQKeywordImpl implements KeywordProcessor {
             });
 
             azuolasResponse = new AzuolasResponse();
-            azuolasResponse.setMessage(answers);
+            azuolasResponse.setMessage(String.join("\n\n\n\n",answers));
             azuolasResponse.setHasFile(false);
 
             return azuolasResponse;

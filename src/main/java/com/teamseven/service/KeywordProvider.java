@@ -54,22 +54,14 @@ public class KeywordProvider {
         List<KeywordProcessor> keywordProcessors =  new ArrayList<>();
         List<AzuolasResponse> azuolasResponses =  new ArrayList<>();
 
-        if(request.getKeywordsEnums().isEmpty()){
+        if(KeywordsEnum.COMPANY.toString().equalsIgnoreCase(request.getUserType())){
+            keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.COMPANY));
 
-        keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.FAQ));
+        }else if(KeywordsEnum.APPLICANT.toString().equalsIgnoreCase(request.getUserType())){
+            keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.APPLICANT));
+        }else{
+            keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.FAQ));
         }
-
-//
-//        if(request.getKeywordsEnums().contains(KeywordsEnum.REPORT)){
-//            keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.REPORT));
-//        }
-//        if(request.getKeywordsEnums().contains(KeywordsEnum.OFFICE)){
-//            keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.OFFICE));
-//        }
-//
-//        if(request.getKeywordsEnums().isEmpty()){
-//            keywordProcessors.add(keywordFactory.getProcessor(KeywordsEnum.DEFAULT));
-//        }
 
 
 
