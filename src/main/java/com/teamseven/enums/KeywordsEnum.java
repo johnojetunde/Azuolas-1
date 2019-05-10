@@ -1,7 +1,10 @@
-package com.teamseven.service;
+package com.teamseven.enums;
 
 public enum KeywordsEnum {
     REPORT,
     ASSIGN,
     OFFICE
+
+
+
 }

@@ -1,22 +1,16 @@
 package com.teamseven.service;
 
-import com.teamseven.service.impl.Keyword;
-import com.teamseven.service.processor.ReportKeywordImpl;
+import com.teamseven.enums.KeywordsEnum;
+import com.teamseven.service.keywordprocessor.KeywordProcessor;
+import com.teamseven.service.keywordprocessor.impl.ReportKeywordImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import static com.teamseven.service.KeywordsEnum.*;
-
+@Service
 public class KeywordFactory {
 
     @Autowired
     private ReportKeywordImpl reportKeyword;
-
-    public void process(KeywordsEnum keywordsEnum){
-
-        getProcessor(keywordsEnum).process("string");
-
-
-    }
 
     public KeywordProcessor getProcessor(KeywordsEnum keywordsEnum){
         switch(keywordsEnum){
