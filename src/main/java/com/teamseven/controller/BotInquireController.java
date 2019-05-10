@@ -2,15 +2,14 @@ package com.teamseven.controller;
 
 import com.teamseven.apimodel.AzuolasRequest;
 import com.teamseven.apimodel.AzuolasResponse;
+import com.teamseven.exceptions.ApiException;
 import com.teamseven.service.KeywordProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +23,16 @@ public class BotInquireController {
     private KeywordProvider keywordProvider;
 
 
-    @RequestMapping(value = "/inquire", method = RequestMethod.POST)
-    public List<AzuolasResponse> inquire(@RequestBody @Validated AzuolasRequest request){
+    @ResponseBody
+    @RequestMapping(value = "/inquire", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<AzuolasResponse> inquire(@RequestBody @Validated AzuolasRequest request)throws ApiException {
         try {
-            return keywordProvider.treatRequest(request);
+            List<AzuolasResponse> response = keywordProvider.treatRequest(request);
+            return response;
         }catch(Exception e){
             logger.error(e.getMessage());
+            throw new ApiException(e.getMessage());
         }
-        return new ArrayList<>();
     }
 
 }

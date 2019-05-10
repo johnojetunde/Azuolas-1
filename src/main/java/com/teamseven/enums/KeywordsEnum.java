@@ -4,6 +4,7 @@ public enum KeywordsEnum {
     REPORT,
     ASSIGN,
     OFFICE,
+    FAQ,
     DEFAULT;
 
     public static KeywordsEnum fromValue(String text) {
