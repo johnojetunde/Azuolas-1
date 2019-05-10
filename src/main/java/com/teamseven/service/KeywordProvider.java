@@ -26,8 +26,6 @@ public class KeywordProvider {
 
         HashMap<KeywordsEnum, String> keys;
 
-        for (KeywordsEnum KE)
-
         return keywordsEnums;
     }
 
